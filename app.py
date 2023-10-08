@@ -10,7 +10,7 @@ app.secret_key = os.urandom(24)
 load_dotenv()
 PASSWORD = os.getenv("PASSWORD")
 entries = []
-
+#omwognwiegontiotngwrio
 
 @dataclass
 class Entry():
