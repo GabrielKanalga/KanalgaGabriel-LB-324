@@ -1,27 +1,27 @@
+import pytest
 from app import app, entries
 
-import pytest
 
-# Use Flask's test client for testing
-
-
-@pytest.fixture()
+@pytest.fixture
 def client():
     app.config["TESTING"] = True
-    client = app.test_client()
+    with app.test_client() as client:
+        yield client
 
-    yield client
 
+def test_add_entry_with_happiness(client):
+    # Log in first
+    client.post(
+        "/login", data={"password": "einSehrGeheimesPasswort"}
+    )  # Make sure PASSWORD is imported or defined
 
-def test_add_entry(client):
-    # Test adding an entry
-    response = client.post("/add_entry", data={"content": "Test Entry Content"})
+    # Check initial length of entries
+    initial_len = len(entries)
 
-    # Check if the response is a redirect to the index page
-    assert response.status_code == 302
-    assert response.headers["Location"] == "/"
+    # Perform the POST request to add an entry
+    client.post("/add_entry", data={"content": "Test content", "happiness": "🙂"})
 
-    # Check if the entry was added to the database
-    entry = entries[0]
-    assert entry is not None
-    assert entry.content == "Test Entry Content"
+    # Assertions
+    assert len(entries) == initial_len + 1
+    assert entries[-1].content == "Test content"
+    assert entries[-1].happiness == "🙂"

@@ -9,7 +9,7 @@ assignees: ''
 
 ### Zielsystem
 
-Beschreiben Sie das (Teil-)System, das von diesem Issue betroffen ist. 
+Beschreiben Sie das (Teil-)System, das von diesem Issue betroffen ist.
 
 
 ### Priorität
@@ -36,17 +36,17 @@ Beschreiben Sie die Art der Interaktion:
 
 ### Allfällige Ergänzungen
 
- Haben Sie weitere Informationen oder Kontext, der hilfreich sein könnte? 
+ Haben Sie weitere Informationen oder Kontext, der hilfreich sein könnte?
 
 
 
 ### Funktionalität
 
- Was soll das Zielsystem konkret tun oder ermöglichen? 
+ Was soll das Zielsystem konkret tun oder ermöglichen?
 
- 
+
 ### Bedingungen
 
- 
+
 - Zeitliche Bedingungen: Geben Sie diese mit "wenn" an.
 - Logische Bedingungen: Geben Sie diese mit "falls" an.
